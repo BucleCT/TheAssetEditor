@@ -193,8 +193,13 @@ namespace AssetEditor.Services
 
         public void CloseAllTools(IEditorInterface tool)
         {
-            foreach (var editorViewModel in CurrentEditorsList)
-                CloseTool(editorViewModel);
+            //foreach (var editorViewModel in CurrentEditorsList)
+            //    CloseTool(editorViewModel);
+
+            var tabs = CurrentEditorsList.Count;
+            for(var i = tabs - 1; i >= 0; i--)
+            {CloseTool(CurrentEditorsList[i]);
+            }
         }
 
         public void CloseToolsToLeft(IEditorInterface tool)
